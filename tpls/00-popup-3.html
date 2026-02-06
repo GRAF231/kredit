@@ -1,0 +1,397 @@
+<div class="js-popup dropdown" id="popup-03">
+
+        <div class="popup">
+
+            <div class="popup-header">
+                <div class="popup-title">
+                    <div class="popup-title-text">
+                        <div class="title title__medium">
+                            <h2>Поиск</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-header-buttons">
+                    <div class="popup-header-button">
+                        <div class="popup-close js-popup-close">
+                            <svg class="icon">
+                                <use xlink:href="#i-close"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-content scrollbox">
+
+                <form action="." method="post">
+
+                    <div class="formbox">
+                        <div class="formbox-row">
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Дата выдачи</div>
+
+                                <?php
+
+                                            $presetStart = date('Y-01-01');
+                                            $presetEnd = date('Y-m-d');
+
+                                            ?>
+
+                                <div class="textfield-range">
+                                    <div class="textfield">
+                                        <input class="textfield-input" type="date" value="<?php print $presetStart; ?>" id="search-date-start">
+                                    </div>
+                                    <div class="textfield">
+                                        <input class="textfield-input" type="date" value="<?php print $presetEnd; ?>" id="search-date-end">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formbox-row">
+                            <div class="formbox-cell">
+                                <div class="switch-group">
+                                    <div class="switch-group-inner">
+                                        <div class="switch">
+
+                                            <?php
+
+                                            $presetStart = date('Y-m-d');
+                                            $presetEnd = date('Y-m-d');
+
+                                            ?>
+
+                                            <button type="button" class="button button__flat" data-preset-start="<?php print $presetStart;?>" data-preset-end="<?php print $presetEnd;?>">
+                                                <span class="button-text">Сегодня</span>
+                                            </button>
+                                        </div>
+                                        <div class="switch">
+
+                                            <?php
+
+                                            $presetStart = date('Y-m-d', strtotime('-1 day'));
+                                            $presetEnd = date('Y-m-d', strtotime('-1 day'));
+
+                                            ?>
+
+                                            <button type="button" class="button button__flat" data-preset-start="<?php print $presetStart;?>" data-preset-end="<?php print $presetEnd;?>">
+                                                <span class="button-text">Вчера</span>
+                                            </button>
+                                        </div>
+                                        <div class="switch">
+
+                                            <?php
+
+                                            $presetStart = date('Y-m-d', strtotime('-1 week'));
+                                            $presetEnd = date('Y-m-d');
+
+                                            ?>
+
+                                            <button type="button" class="button button__flat" data-preset-start="<?php print $presetStart;?>" data-preset-end="<?php print $presetEnd;?>">
+                                                <span class="button-text">Неделя</span>
+                                            </button>
+                                        </div>
+                                        <div class="switch">
+
+                                            <?php
+
+                                            $presetStart = date('Y-m-d', strtotime('-1 month'));
+                                            $presetEnd = date('Y-m-d');
+
+                                            ?>
+
+                                            <button type="button" class="button button__flat" data-preset-start="<?php print $presetStart;?>" data-preset-end="<?php print $presetEnd;?>">
+                                                <span class="button-text">Месяц</span>
+                                            </button>
+                                        </div>
+                                        <div class="switch">
+
+                                            <?php
+
+                                            $presetStart = date('Y-m-d');
+                                            $presetEnd = date('Y-m-d', strtotime('-1 year'));
+
+                                            ?>
+
+                                            <button type="button" class="button button__flat" data-preset-start="<?php print $presetStart;?>" data-preset-end="<?php print $presetEnd;?>">
+                                                <span class="button-text">Год</span>
+                                            </button>
+                                        </div>
+                                        <div class="switch">
+                                            <?php
+
+                                            $presetStart = date('Y-01-01');
+                                            $presetEnd = date('Y-m-d');
+
+                                            ?>
+                                            <button type="button" class="button button__flat" data-preset-start="<?php print $presetStart;?>" data-preset-end="<?php print $presetEnd;?>">
+                                                <span class="button-text">За всё время</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formbox-row">
+                            <div class="formbox-cell">
+                                <div class="selector js-selector">
+                                    <div class="selector-holder js-selector-toggle">
+                                        <input type="text" class="selector-holder-input js-selector-value" value="Все биржи" readonly placeholder="" title="">
+                                        <span class="selector-holder-icon">
+                                            <svg class="icon">
+                                                <use xlink:href="#i-chevron"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div class="selector-list selector-list__contrast js-selector-list">
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill active" data-value="Все биржи">Все биржи</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Займы">Займы</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Кредиты">Кредиты</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formbox-cell">
+                                <div class="selector js-selector">
+                                    <div class="selector-holder js-selector-toggle">
+                                        <input type="text" class="selector-holder-input js-selector-value" value="Все займы" readonly placeholder="" title="">
+                                        <span class="selector-holder-icon">
+                                            <svg class="icon">
+                                                <use xlink:href="#i-chevron"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div class="selector-list selector-list__contrast js-selector-list">
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill active" data-value="Все займы">Все займы</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Активные">Активные</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Возвращённые">Возвращённые</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Невозвращённые">Невозвращённые</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="С неоплаченной просрочкой">С неоплаченной просрочкой</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Учёт в сервисе прекращён">Учёт в сервисе прекращён</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formbox-row">
+                            <div class="formbox-cell">
+                                <div class="selector js-selector">
+                                    <div class="selector-holder js-selector-toggle">
+                                        <input type="text" class="selector-holder-input js-selector-value" value="Все аттестаты" readonly placeholder="" title="">
+                                        <span class="selector-holder-icon">
+                                            <svg class="icon">
+                                                <use xlink:href="#i-chevron"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div class="selector-list selector-list__contrast js-selector-list">
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill active" data-value="Все аттестаты">Все аттестаты</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Формальный">Формальные</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Начальный">Начальные</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Персональный">Персональные</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formbox-cell">
+                                <div class="selector js-selector">
+                                    <div class="selector-holder js-selector-toggle">
+                                        <input type="text" class="selector-holder-input js-selector-value" value="Все страны" readonly placeholder="" title="">
+                                        <span class="selector-holder-icon">
+                                            <svg class="icon">
+                                                <use xlink:href="#i-chevron"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div class="selector-list selector-list__contrast selector-list__large js-selector-list">
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill active" data-value="Все страны">Все страны</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Россия">Россия</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Белорусь">Белорусь</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Казахстан">Казахстан</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Таджикистан">Таджикистан</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Армения">Армения</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Молдова">Молдова</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Россия">Россия</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Белорусь">Белорусь</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Казахстан">Казахстан</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Таджикистан">Таджикистан</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Армения">Армения</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Молдова">Молдова</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Россия">Россия</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Белорусь">Белорусь</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Казахстан">Казахстан</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Таджикистан">Таджикистан</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Армения">Армения</div>
+                                        </div>
+                                        <div class="selector-option">
+                                            <div class="selector-option-inner js-selector-option fill" data-value="Молдова">Молдова</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formbox-row">
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Дни займа</div>
+                                <div class="textfield-range">
+                                    <div class="textfield">
+                                        <input class="textfield-input" type="number" placeholder="0">
+                                    </div>
+                                    <div class="textfield">
+                                        <input class="textfield-input" type="number" placeholder="365">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Сумма займа</div>
+                                <div class="textfield-range">
+                                    <div class="textfield">
+                                        <input class="textfield-input" type="number" placeholder="0">
+                                    </div>
+                                    <div class="textfield">
+                                        <input class="textfield-input" type="number" placeholder="10000">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formbox-row">
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Процент займа</div>
+                                <div class="textfield-range">
+                                    <div class="textfield">
+                                        <input class="textfield-input" type="number" placeholder="0">
+                                    </div>
+                                    <div class="textfield">
+                                        <input class="textfield-input" type="number" placeholder="900">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Дней от регистрации до займа </div>
+                                <div class="textfield-range">
+                                    <div class="textfield">
+                                        <input class="textfield-input" type="number" placeholder="0">
+                                    </div>
+                                    <div class="textfield">
+                                        <input class="textfield-input" type="number" placeholder="0">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formbox-row">
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Поисковая строка</div>
+                                <div class="textfield searchbox">
+                                    <input type="text" class="searchbox-input" placeholder="" value="">
+                                    <div class="searchbox-selector">
+                                        <div class="selector js-selector">
+                                            <div class="selector-holder js-selector-toggle">
+                                                <input type="text" class="selector-holder-input js-selector-value" value="WMID" readonly placeholder="" title="">
+                                                <span class="selector-holder-icon">
+                                                    <svg class="icon">
+                                                        <use xlink:href="#i-chevron"></use>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                            <div class="selector-list selector-list__contrast js-selector-list">
+                                                <div class="selector-option">
+                                                    <div class="selector-option-inner js-selector-option fill active" data-value="WMID">WMID</div>
+                                                </div>
+                                                <div class="selector-option">
+                                                    <div class="selector-option-inner js-selector-option fill" data-value="EMAIL">EMAIL</div>
+                                                </div>
+                                                <div class="selector-option">
+                                                    <div class="selector-option-inner js-selector-option fill" data-value="ID">ID</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="textfield-submit">
+                                        <svg class="icon">
+                                            <use xlink:href="#i-search"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    <script>
+        $("[data-preset-start]").click(function(e) {
+
+            var presetStart = $(this).data("preset-start");
+            var presetEnd = $(this).data("preset-end");
+
+            e.preventDefault();
+
+            $("#search-date-start").val(presetStart ? presetStart : null);
+            $("#search-date-end").val(presetEnd ? presetEnd : null);
+
+        });
+
+    </script>
+
+</div>

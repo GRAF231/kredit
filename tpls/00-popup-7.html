@@ -1,0 +1,218 @@
+<div class="js-popup dropdown" id="popup-07">
+
+        <div class="popup">
+
+            <div class="popup-header">
+                <div class="popup-title">
+                    <div class="popup-title-text">
+                        <div class="title title__medium">
+                            <h2>Калькулятор</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-header-buttons">
+                    <div class="popup-header-button">
+                        <div class="popup-close js-popup-close">
+                            <svg class="icon">
+                                <use xlink:href="#i-close"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popup-content scrollbox">
+
+                <form action="." method="post" id="form-calculator">
+
+                    <div class="formbox">
+                        <div class="formbox-row">
+
+
+                            <?php
+
+                                            $presetStart = NULL; // date('Y-m-d');
+                                            $presetEnd = NULL; //date('Y-m-d', strtotime('+1 month'));
+
+                                            ?>
+
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Дата выдачи</div>
+                                <div class="textfield">
+                                    <input class="textfield-input" id="form-calculator-start" type="date" value="<?php print $presetStart; ?>">
+                                </div>
+                            </div>
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Дата возврата</div>
+                                <div class="textfield">
+                                    <input class="textfield-input" id="form-calculator-end" type="date" value="<?php print $presetEnd; ?>">
+                                </div>
+                            </div>
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Дни</div>
+                                <div class="textfield">
+                                    <input class="textfield-input" id="form-calculator-days" type="number" value="<?php print round( (strtotime($presetEnd) - strtotime($presetStart)) / (60 * 60 * 24) );?>" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="formbox-row">
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Сумма займа</div>
+                                <div class="textfield">
+                                    <input class="textfield-input" id="form-calculator-sum" type="number" value="" placeholder="0" min="0" step="0.01">
+                                </div>
+                            </div>
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Сумма возврата</div>
+                                <div class="textfield">
+                                    <input class="textfield-input" id="form-calculator-return" type="number" value="" placeholder="0" min="0" step="0.01">
+                                </div>
+                            </div>
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Процент</div>
+                                <div class="textfield">
+                                    <input class="textfield-input" id="form-calculator-percent" type="number" value="0" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="formbox-row">
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Дата просрочки</div>
+                                <div class="textfield">
+                                    <input class="textfield-input" id="form-overdue-date" type="date" value="<?php print $presetEnd; ?>">
+                                </div>
+                            </div>
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Дни просрочки</div>
+                                <div class="textfield">
+                                    <input class="textfield-input" id="form-overdue-days" type="number" value="0" readonly>
+                                </div>
+                            </div>
+                            <div class="formbox-cell">
+                                <div class="textfield-label">Сумма просрочки</div>
+                                <div class="textfield">
+                                    <input class="textfield-input" id="form-overdue-sum" type="number" value="0" min="0" step="0.01" readonly>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <script>
+                    $("#form-calculator").on("change", function() {
+
+                        var startVal = $("#form-calculator-start").val(),
+                            cEnd = $("#form-calculator-end"),
+                            cSum = $("#form-calculator-sum"),
+                            cDays = $("#form-calculator-days"),
+                            cReturn = $("#form-calculator-return"),
+                            cPercent = $("#form-calculator-percent"),
+                            cOverdueDate = $("#form-overdue-date"),
+                            cOverdueDays = $("#form-overdue-days"),
+                            cOverdueSum = $("#form-overdue-sum"),
+                            endVal = cEnd.val(),
+                            overdueVal = cOverdueDate.val(),
+                            cDiff = 0,
+                            overdueDiff = 0;
+
+                        if (startVal && endVal) {
+
+                            var startDt = new Date(startVal).getTime();
+                            var endDt = new Date(endVal).getTime();
+
+                            cEnd.attr("min", startVal);
+                            cOverdueDate.attr("min", endVal);
+
+                            var overdueDt = new Date(overdueVal).getTime();
+
+                            if (overdueDt < endDt) {
+
+                                cOverdueDate.val(endVal);
+
+                            }
+
+                            overdueDt = new Date(overdueVal).getTime();
+
+                            overdueDiff = (overdueDt - endDt) / 86400000;
+
+
+                            if (startDt > endDt) {
+
+                                endVal = startVal;
+                                endDt = startDt;
+
+                                cEnd.val(endVal);
+
+                            }
+
+                            cDiff = (endDt - startDt) / 86400000;
+
+
+                            if (overdueDiff > 0) {
+
+                                var cSumVal = cSum.val();
+                                var cReturnVal = cReturn.val();
+
+                                var overdue = (cReturnVal - cSumVal) / cDiff * overdueDiff;
+
+                                overdue = overdue.toFixed(2);
+
+                                cOverdueDays.val(overdueDiff);
+                                cOverdueSum.val(parseFloat(overdue));
+
+                            } else {
+
+                                cOverdueDays.val(0);
+                                cOverdueSum.val(0);
+
+                            }
+
+                        }
+
+
+                        if (cDiff) {
+
+                            var cSumVal = cSum.val();
+                            var cReturnVal = cReturn.val();
+
+                            cDays.val(cDiff);
+
+                            if (cSumVal <= cReturnVal) {
+
+                                var calc = ((cReturnVal - cSumVal) / cSumVal / cDiff) * 30 * 100;
+
+                                calc = calc.toFixed(4);
+
+                                cPercent.val(parseFloat(calc));
+
+                            }
+
+                        } else {
+
+                            cDays.val(0);
+                            cPercent.val(0);
+
+                        }
+
+
+
+                    });
+                    
+                    $("#form-calculator").find("input").on("change keyup input", function(){
+                        
+                        $("#form-calculator").trigger("change");
+                        
+                    });
+
+                </script>
+
+
+            </div>
+
+        </div>
+ 
+
+</div>

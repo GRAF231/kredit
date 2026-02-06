@@ -1,0 +1,93 @@
+<div class="js-popup dropdown" id="popup-12">
+
+    <div class="popup">
+
+        <div class="popup-header">
+            <div class="popup-title">
+                <div class="popup-title-text">
+                    <div class="title title__medium">
+                        <h2>Подписка</h2>
+                    </div>
+                </div>
+                <div class="popup-title-note">
+                    <a href="#" class="button button__flat readonly">
+                        <span class="button-text">
+                            12 д. 22 ч. 15 м.
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="popup-header-buttons">
+                <div class="popup-header-button">
+                    <div class="popup-close js-popup-close">
+                        <svg class="icon">
+                            <use xlink:href="#i-close"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="popup-content scrollbox">
+
+            <form action="." method="post" id="form-subs">
+
+                <div class="formbox">
+
+                    <div class="formbox-row">
+                        <div class="formbox-cell">
+                            <div class="textfield-label">Количество месяцев</div>
+                            <div class="textfield">
+                                <input class="textfield-input" id="form-subs-mon" type="number" value="1" min="1" required>
+                            </div>
+                        </div>
+                        <div class="formbox-cell">
+                            <div class="textfield-label">Сумма</div>
+                            <div class="textfield">
+                                <input class="textfield-input" id="form-subs-sum" type="number" value="30" min="0" readonly>
+                            </div>
+                        </div>
+                        <div class="formbox-cell">
+                            <button type="submit" class="button button__primary button__wide">
+                                <span class="button-text">Оплатить</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+            
+            <script>
+                    $("#form-subs").on("change", function() {
+
+                        var monVal = $("#form-subs-mon").val(),
+                            sum = $("#form-subs-sum"),
+                            inc = 30;
+
+                        if (monVal) {
+
+                            sum.val( monVal * inc );
+
+                        } else {
+                            
+                            sum.val(0);
+                            
+                        }
+
+
+
+                    });
+                    
+                    $("#form-subs").find("input").on("change keyup input", function(){
+                        
+                        $("#form-subs").trigger("change");
+                        
+                    });
+
+                </script>
+
+        </div>
+
+    </div>
+
+</div>

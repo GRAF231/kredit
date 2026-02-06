@@ -1,0 +1,163 @@
+<div class="section s3">
+    <div class="wrapper">
+
+        <div class="section-header">
+            <div class="title title__default">
+                <h1>Настройки</h1>
+            </div>
+        </div>
+
+        <div class="s3-1">
+
+            <div class="s3-2">
+                <div class="s3-3">
+                    <div class="s3-5">
+                        <div class="title title__medium">Доверенные</div>
+                    </div>
+                    <div class="s3-6">
+                        <div class="s3-6-1">
+                            <a href="#" class="button button__flat tooltip js-personal-data-button" title="Подсказка">
+                                <span class="button-icon">
+                                    <svg class="icon">
+                                        <use xlink:href="#i-help-alt"></use>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="s3-6-1">
+                            <a href="#" class="button button__flat tooltip js-refresh-animation" title="Подсказка">
+                                <span class="button-icon">
+                                    <svg class="icon">
+                                        <use xlink:href="#i-refresh"></use>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="s3-6-1">
+                            <div class="button button__flat allow tooltip" title="Подсказка">
+                                <span class="button-icon">
+                                    <svg class="icon">
+                                        <use xlink:href="#i-check"></use>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="s3-4">
+                    <div class="s3-4-1">
+                        <div class="textfield">
+                            <input type="text" class="textfield-input" placeholder="Добавить" value="Добавить" readonly>
+                            <a href="." type="submit" class="textfield-submit">
+                                <svg class="icon">
+                                    <use xlink:href="#i-submit"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="s3-2">
+                <div class="s3-3">
+                    <div class="s3-5">
+                        <div class="title title__medium">Оплата</div>
+                    </div>
+                    <div class="s3-6">
+                        <div class="s3-6-1">
+                            <a href="#" class="button button__flat tooltip js-personal-data-button" title="Подсказка">
+                                <span class="button-icon">
+                                    <svg class="icon">
+                                        <use xlink:href="#i-help-alt"></use>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="s3-6-1">
+                            <a href="#" class="button button__flat tooltip js-refresh-animation" title="Подсказка">
+                                <span class="button-icon">
+                                    <svg class="icon">
+                                        <use xlink:href="#i-refresh"></use>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="s3-6-1">
+                            <div class="button button__flat allow tooltip" title="Подсказка">
+                                <span class="button-icon">
+                                    <svg class="icon">
+                                        <use xlink:href="#i-check"></use>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="s3-4">
+                    <div class="s3-4-1">
+                        <div class="selector js-selector">
+                            <div class="selector-holder js-selector-toggle">
+                                <input type="text" class="selector-holder-input js-selector-value" value="1000 WMT" readonly placeholder="" title="">
+                                <span class="selector-holder-icon">
+                                    <svg class="icon">
+                                        <use xlink:href="#i-chevron"></use>
+                                    </svg>
+                                </span>
+                            </div>
+
+                            <div class="selector-list selector-list__contrast js-selector-list">
+                                <div class="selector-option">
+                                    <div class="selector-option-inner js-selector-option fill active" data-value="1000 WMT">1000 WMT</div>
+                                </div>
+                                <div class="selector-option">
+                                    <div class="selector-option-inner js-selector-option fill" data-value="1001 WMT">1001 WMT</div>
+                                </div>
+                                <div class="selector-option">
+                                    <div class="selector-option-inner js-selector-option fill" data-value="1002 WMT">1002 WMT</div>
+                                </div>
+                            </div>
+
+
+                            <button type="button" class="selector-submit" data-popup="#popup-10">
+                                <svg class="icon">
+                                    <use xlink:href="#i-submit"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(".js-personal-data-button").each(function(i) {
+
+
+            $(this).click(function(e) {
+
+                e.preventDefault();
+                popup("#popup-04");
+
+                $("#faq-personal-data").addClass("active").siblings().removeClass("active");
+
+            });
+
+        });
+
+        $(".js-refresh-animation").each(function(i) {
+
+
+            $(this).click(function(e) {
+
+                e.preventDefault();
+
+                $(this).addClass("loading");
+
+            });
+
+        });
+
+    </script>
+
+</div>

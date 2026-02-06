@@ -1,0 +1,228 @@
+<div class="header">
+    <div class="topbar-container" id="headroom">
+        <div class="wrapper">
+            <div class="topbar">
+                <div class="topbar-logo">
+                    <a href=".">
+                        <img src="static/img/wmp-logo.svg" alt="" class="logo-desktop">
+                        <img src="static/img/wmp-logo-mobile.svg" alt="" class="logo-mobile">
+                    </a>
+                </div>
+                <div class="topbar-nav">
+                    <ul class="main-menu">
+                        <li class="current">
+                            <a href="#" class="button button__default">
+                                <span class="button-icon">
+                                    <svg class="icon">
+                                        <use xlink:href="#i-study"></use>
+                                    </svg>
+                                </span>
+                                <span class="button-text">Обучение</span>
+								<svg class="icon toolbar-mobile">
+                                <use xlink:href="#i-chevron"></use>
+                            </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="button button__default">
+                                <span class="button-icon">
+                                    <svg class="icon">
+                                        <use xlink:href="#i-wallet"></use>
+                                    </svg>
+                                </span>
+                                <span class="button-text">Кредитор</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="button button__default">
+                                <span class="button-icon">
+                                    <svg class="icon">
+                                        <use xlink:href="#i-change"></use>
+                                    </svg>
+                                </span>
+                                <span class="button-text">Заёмщик</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="topbar-buttons">
+                    <div class="topbar-button">
+                        <a href="#" class="button button__default" data-popup="#popup-04">
+                            <span class="button-icon">
+                                <svg class="icon">
+                                    <use xlink:href="#i-help"></use>
+                                </svg>
+                            </span>
+                            <span class="button-text">Помощь</span>
+                        </a>
+                    </div>
+                    <div class="topbar-button">
+                        <a href="#" class="button button__default">
+                            <span class="button-icon">
+                                <svg class="icon">
+                                    <use xlink:href="#i-user2"></use>
+									<!--Если юзер залогинен, id иконки должно измениться на i-user3, т.е. будет <use xlink:href="#i-user3"></use>-->
+                                </svg>
+                            </span>
+                            <span class="button-text">Войти</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="popup-container">
+            <div class="wrapper">
+                <div class="popup-container-inner">
+                    <?php 
+
+include("tpls/00-popup-4.html"); 
+
+?>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php
+
+if ($item[2]) {
+
+?>
+
+    <div class="navbar-container" id="nav-container">
+        <div class="wrapper">
+
+            <div class="navbar">
+                <div class="navbar-main" id="navbar-main">
+                    <ul>
+                        <li class="current">
+                            <a href="#">Заёмщики</a>
+                        </li>
+                        <li>
+                            <a href="#">Займ</a>
+                        </li>
+                        <li>
+                            <a href="#">Просрочки</a>
+                        </li>
+                        <li>
+                            <a href="#">Рассылка</a>
+                        </li>
+                        <li>
+                            <a href="#">История покупок</a>
+                        </li>
+                        <li>
+                            <a href="#">Настройки</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-buttons">
+                    <div class="navbar-button navbar-button__menu">
+                        <a href="#" class="button button__flat" data-popup="#popup-11">
+                            <span class="button-icon">
+                                <svg class="icon">
+                                    <use xlink:href="#i-menu"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-button">
+                        <a href="#" class="button button__flat tooltip" data-popup="#popup-03" title="Поиск">
+                            <span class="button-icon">
+                                <svg class="icon">
+                                    <use xlink:href="#i-search"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-button">
+                        <a href="#" class="button button__flat tooltip" data-popup="#popup-07" title="Калькулятор">
+                            <span class="button-icon">
+                                <svg class="icon">
+                                    <use xlink:href="#i-calculator"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-button" hidden>
+                        <a href="#" class="button button__flat tooltip" data-popup="#popup-05" title="Общая статистика">
+                            <span class="button-icon">
+                                <svg class="icon">
+                                    <use xlink:href="#i-percent"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-button">
+                        <a href="#" class="button button__flat tooltip" title="Загрузить SDF">
+                            <span class="button-icon">
+                                <svg class="icon">
+                                    <use xlink:href="#i-upload"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-button">
+                        <a href="#" class="button button__flat tooltip" data-popup="#popup-01" title="Уведомления">
+                            <span class="button-icon">
+                                <svg class="icon">
+                                    <use xlink:href="#i-notification"></use>
+                                </svg>
+                            </span>
+                        </a>
+                        <div class="navbar-button-alert"></div>
+                    </div>
+                    <div class="navbar-button">
+                        <a href="#" class="button button__flat tooltip" data-popup="#popup-12" title="Подписка">
+                            <span class="button-icon">
+                                <svg class="icon">
+                                    <use xlink:href="#i-write"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="navbar-button">
+                        <a href="#" class="button button__flat tooltip" data-popup="#popup-13" title="Покупка рекомендации">
+                            <span class="button-icon">
+                                <svg class="icon">
+                                    <use xlink:href="#i-subscribe"></use>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="popup-container">
+            <div class="wrapper">
+                <div class="popup-container-inner">
+                    <?php 
+
+include("tpls/00-popup-1.html"); 
+include("tpls/00-popup-3.html"); 
+include("tpls/00-popup-5.html"); 
+include("tpls/00-popup-7.html"); 
+include("tpls/00-popup-12.html"); 
+include("tpls/00-popup-13.html"); 
+
+?>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <?php
+
+}
+
+?>
+
+</div>
