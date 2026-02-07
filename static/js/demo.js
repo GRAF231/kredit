@@ -150,11 +150,39 @@ $(".js-selector").each(function (i) {
 
         if (!dd.hasClass("selector-list__inner")) {
 
-            dd.css({
-                left: pl,
-                top: pt,
-                "max-width": select.outerWidth()
-            });
+            // Получаем высоту выпадающего списка
+            var dropdownHeight = dd.outerHeight();
+            
+            // Получаем высоту окна и позицию скролла
+            var windowHeight = $(window).height();
+            var scrollTop = $(window).scrollTop();
+            
+            // Вычисляем доступное место снизу и сверху
+            var spaceBelow = windowHeight + scrollTop - pt;
+            var spaceAbove = pos.top - scrollTop;
+            
+            // Проверяем, достаточно ли места снизу
+            var shouldOpenUpwards = spaceBelow < dropdownHeight && spaceAbove > spaceBelow;
+            
+            if (shouldOpenUpwards) {
+                // Открываем вверх
+                dd.addClass("open-upwards");
+                dd.css({
+                    left: pl,
+                    bottom: windowHeight - pos.top + scrollTop,
+                    top: 'auto',
+                    "max-width": select.outerWidth()
+                });
+            } else {
+                // Открываем вниз (по умолчанию)
+                dd.removeClass("open-upwards");
+                dd.css({
+                    left: pl,
+                    top: pt,
+                    bottom: 'auto',
+                    "max-width": select.outerWidth()
+                });
+            }
 
         }
 
@@ -189,7 +217,7 @@ $(".js-selector").each(function (i) {
 
         dd.find(".active").removeClass("active");
         $(this).addClass("active");
-        dd.removeClass("active");
+        dd.removeClass("active").removeClass("open-upwards");
         select.removeClass("active");
         return;
     });
@@ -198,14 +226,14 @@ $(".js-selector").each(function (i) {
 
 $("html").on("click", function () {
     $(".js-selector").removeClass("active");
-    $(".js-selector-list").removeClass("active");
+    $(".js-selector-list").removeClass("active").removeClass("open-upwards");
 });
 
 $(window).on("resize", function () {
 
 
     $(".js-selector").removeClass("active");
-    $(".js-selector-list").removeClass("active");
+    $(".js-selector-list").removeClass("active").removeClass("open-upwards");
 
 });
 
@@ -400,7 +428,7 @@ $(function () {
     $(".mb-content").on("scroll", function () {
 
         $(".js-selector:not(.selector__inner)").removeClass("active");
-        $(".js-selector-list:not(.selector-list__inner)").removeClass("active");
+        $(".js-selector-list:not(.selector-list__inner)").removeClass("active").removeClass("open-upwards");
 
     });
 
@@ -409,7 +437,7 @@ $(function () {
     $(window).on("scroll", function () {
 
         $(".js-selector:not(.selector__inner)").removeClass("active");
-        $(".js-selector-list:not(.selector-list__inner)").removeClass("active");
+        $(".js-selector-list:not(.selector-list__inner)").removeClass("active").removeClass("open-upwards");
         //$(".header").toggleClass("active", $(window).scrollTop() > 0);
 
     }).trigger("scroll");

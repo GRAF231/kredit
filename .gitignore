@@ -1,1 +1,7 @@
 .vscode/
+
+# Скрипты и документация минификации
+minify-css.py
+minify.sh
+README-minify.md
+MINIFY-QUICK.txt
