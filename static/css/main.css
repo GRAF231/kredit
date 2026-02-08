@@ -1319,6 +1319,7 @@
         white-space: nowrap;
     }
 
+    .searchbox-input+.textfield-input,
     .textfield-input+.textfield-input {
         border-left: var(--sl) solid var(--c8);
     }
@@ -1333,6 +1334,10 @@
 
     .textfield-input:focus:-ms-input-placeholder {
         color: transparent;
+    }
+
+    textarea.textfield-input {
+        white-space: unset;
     }
 
     .textfield-submit {
@@ -1425,10 +1430,6 @@
         background-color: transparent;
         border-width: 0 0 0 var(--sl);
         border-radius: 0;
-    }
-
-    .searchbox-selector .selector-holder-input {
-        width: 60rem;
     }
 
     .searchbox-input {
@@ -2243,6 +2244,21 @@
     .s3-4 .searchbox-input {
         flex: none;
         max-width: 80rem;
+        flex-shrink: 1;
+    }
+
+
+    .s3-4 .textfield-input+.textfield-input,
+    .s3-4 .searchbox-input+.textfield-input,
+    .s3-4 .searchbox-input+.searchbox-selector {
+        flex-shrink: 0;
+        width: fit-content;
+    }
+
+    .s3-4 .searchbox-input+.textfield-input,
+    .searchbox-selector .selector-holder-input {
+        width: 150rem;
+        text-align: right;
     }
 
     .s3-6 {
@@ -3197,6 +3213,14 @@
         grid-template-columns: auto;
     }
 
+    .s3-4-1 .searchbox-input {
+        max-width: 55rem;
+    }
+
+    .s3-4 .searchbox-input+.textfield-input,
+    .searchbox-selector .selector-holder-input {
+        width: 105rem;
+    }
 }
 
 @media screen and (min-width: 600px) {
