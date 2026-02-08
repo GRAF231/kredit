@@ -2237,14 +2237,15 @@
     }
 
     .s3-4 .searchbox-selector {
-        flex: auto;
+        flex: none;
         min-width: 0;
+        width: auto;
     }
 
     .s3-4 .searchbox-input {
-        flex: none;
-        max-width: 80rem;
-        flex-shrink: 1;
+        flex: 1 1 auto;
+        min-width: 0;
+        max-width: none;
     }
 
 
@@ -2252,13 +2253,27 @@
     .s3-4 .searchbox-input+.textfield-input,
     .s3-4 .searchbox-input+.searchbox-selector {
         flex-shrink: 0;
-        width: fit-content;
+        flex-grow: 0;
+        width: auto;
+        min-width: fit-content;
     }
 
     .s3-4 .searchbox-input+.textfield-input,
-    .searchbox-selector .selector-holder-input {
-        width: 150rem;
+    .s3-4 .searchbox-selector .selector-holder-input {
+        width: auto;
+        flex: 0 0 auto;
         text-align: right;
+    }
+
+    .s3-4 .textfield-input__wallet {
+        width: auto !important;
+        flex: 0 0 auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+    }
+
+    .searchbox-selector .selector-holder-input {
+        width: 60rem;
     }
 
     .s3-6 {
@@ -3214,12 +3229,16 @@
     }
 
     .s3-4-1 .searchbox-input {
-        max-width: 55rem;
+        min-width: 40rem;
+        flex: 1 1 auto;
     }
 
     .s3-4 .searchbox-input+.textfield-input,
     .searchbox-selector .selector-holder-input {
-        width: 105rem;
+        width: auto;
+        flex: 0 0 auto;
+        padding-left: 10rem;
+        padding-right: 10rem;
     }
 }
 
