@@ -2260,13 +2260,13 @@
 
     .s3-4 .searchbox-input+.textfield-input,
     .s3-4 .searchbox-selector .selector-holder-input {
-        width: auto;
+        width: 119rem;
         flex: 0 0 auto;
         text-align: right;
     }
 
     .s3-4 .textfield-input__wallet {
-        width: auto !important;
+        width: 150rem !important;
         flex: 0 0 auto !important;
         min-width: 0 !important;
         max-width: none !important;
@@ -2470,6 +2470,14 @@
         margin: -20rem 0;
     }
 
+    .s3-4 .textfield-input__wallet {
+        width: 135rem !important;
+    }
+
+    .s3-4 .searchbox-input+.textfield-input,
+    .s3-4 .searchbox-selector .selector-holder-input {
+        width: 104rem;
+    }
 }
 
 @media screen and (max-width: 1151.98px) {
@@ -2859,7 +2867,14 @@
         color: var(--c3);
     }
 
+    .s3-4 .textfield-input__wallet {
+        width: 111rem !important;
+    }
 
+    .s3-4 .searchbox-input+.textfield-input,
+    .s3-4 .searchbox-selector .selector-holder-input {
+        width: 90rem;
+    }
 }
 
 @media screen and (max-width: 799.98px) {
@@ -3231,14 +3246,13 @@
     .s3-4-1 .searchbox-input {
         min-width: 40rem;
         flex: 1 1 auto;
+        width: 100%;
     }
 
     .s3-4 .searchbox-input+.textfield-input,
     .searchbox-selector .selector-holder-input {
         width: auto;
         flex: 0 0 auto;
-        padding-left: 10rem;
-        padding-right: 10rem;
     }
 }
 
