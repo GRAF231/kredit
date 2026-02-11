@@ -3250,7 +3250,7 @@
     }
 
     .s3-4 .searchbox-input+.textfield-input,
-    .searchbox-selector .selector-holder-input {
+    .s3-4 .searchbox-selector .selector-holder-input {
         width: auto;
         flex: 0 0 auto;
     }
