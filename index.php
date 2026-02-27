@@ -11,7 +11,7 @@ $arr = array(
             array('02-borrower2.html', 'Займы ()', true),
             array('02-borrower3.html', 'Просрочки ()', true),
             array('02-borrower4.html', 'Займы debt ()', true),
-            array('02-borrower5.html', 'Заемщики #5 ()', true),
+            array('02-borrower5.html', 'Рассылка ()', true),
             array('02-borrower6.html', 'Заемщики #6 ()', true),
             array('02-borrower7.html', 'Заемщики #7 ()', true),
             array('02-borrower8.html', 'Заемщики #8 ()', true),
@@ -20,6 +20,7 @@ $arr = array(
             array('03-settings.html', 'Настройки ()', true),
             array('03-settings2.html', 'Настройки #2 ()', true),
             array('03-settings3.html', 'Настройки #3 ()', true),
+			array('03-settings4.html', 'Настройки #4 ()', true),
     
 );
 
