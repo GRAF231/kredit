@@ -11,16 +11,31 @@
     <td>1140</td>
     <td>Все заёмщики</td>
     <td>Напоминане о долге</td>
-    <td>80%</td>
-    <td>Приостановлен</td>
     <td>
-        <a href="#" class="button fill tooltip" title="Редактировать">
+        <div class="loading-indicator loading-indicator--inactive">
+            <span class="loading-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </span>
+            <span class="loading-percent">80%</span>
+        </div>
+    </td>
+    <td>
+        <div class="icon-control icon-control--black">
+            <svg class="icon">
+                <use xlink:href="#i-pause"></use>
+            </svg>
+        </div>
+    </td>
+    <td>
+        <span class="button fill tooltip disabled" title="Редактировать">
             <span class="button-icon">
                 <svg class="icon">
-                    <use xlink:href="#i-enter"></use>
+                    <use xlink:href="#i-edit"></use>
                 </svg>
             </span>
-        </a>
+        </span>
     </td>
     <td>
         <a href="#" class="button fill tooltip" title="Копировать">

@@ -28,6 +28,7 @@
     --c13: #FFC436;
     --c14: rgba(154, 196, 225, 1);
     --c15: rgba(242, 250, 255, 1);
+    --c16: rgba(208, 241, 255, 1);
 
     --wr: 20rem;
     --awr: calc(-1 * var(--wr));
@@ -298,6 +299,11 @@
         color: var(--c9);
     }
 
+    .button.disabled {
+        cursor: not-allowed;
+        opacity: .3;
+    }
+
     .button[data-title] {
         overflow: visible;
     }
@@ -346,6 +352,31 @@
 
     .button.loading .button-icon {
         animation: rotate 1s infinite linear;
+    }
+
+    .icon-control {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: max(14px, 16rem);
+        height: max(14px, 16rem);
+    }
+
+    .icon-control .icon {
+        width: 100%;
+        height: 100%;
+    }
+
+    .icon-control--green {
+        color: var(--c5);
+    }
+
+    .icon-control--red {
+        color: var(--c4);
+    }
+
+    .icon-control--black {
+        color: var(--c1);
     }
 
     .title {
@@ -1107,7 +1138,8 @@
         margin-right: var(--gap);
     }
 
-    .popup-title-text a {
+    .popup-title-text a.button {
+        overflow: visible;
         text-decoration: underline;
     }
 
@@ -1765,7 +1797,7 @@
     }
 
     .datatable tr.checkbox-container.checked td {
-        background-color: var(--c10);
+        background-color: var(--c16);
     }
 
     .datatable-fixed-header {
@@ -2304,6 +2336,9 @@
         display: inline-flex;
         align-items: center;
         gap: 8rem;
+    }
+
+    .title__loading .loading-indicator {
         margin-left: 20rem;
     }
 
@@ -2331,6 +2366,10 @@
 
     .loading-dots .dot:nth-child(3) {
         animation-delay: 0s;
+    }
+
+    .loading-indicator--inactive .loading-dots .dot {
+        animation: none;
     }
 
     .loading-percent {

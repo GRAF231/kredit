@@ -11,16 +11,31 @@
     <td>1615</td>
     <td>Заемщики с просрочками</td>
     <td>Напоминание о задолженности в системе WebMoney</td>
-    <td>100%</td>
-    <td>Завершен</td>
     <td>
-        <a href="#" class="button fill tooltip" title="Редактировать">
+        <div class="loading-indicator loading-indicator--inactive">
+            <span class="loading-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </span>
+            <span class="loading-percent">100%</span>
+        </div>
+    </td>
+    <td>
+        <div class="icon-control icon-control--red">
+            <svg class="icon">
+                <use xlink:href="#i-stop"></use>
+            </svg>
+        </div>
+    </td>
+    <td>
+        <span class="button fill tooltip disabled" title="Редактировать">
             <span class="button-icon">
                 <svg class="icon">
-                    <use xlink:href="#i-enter"></use>
+                    <use xlink:href="#i-edit"></use>
                 </svg>
             </span>
-        </a>
+        </span>
     </td>
     <td>
         <a href="#" class="button fill tooltip" title="Копировать">
