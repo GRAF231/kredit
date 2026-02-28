@@ -355,7 +355,8 @@
     }
 
     .icon-control {
-        display: inline-flex;
+        margin: 0 auto;
+        display: flex;
         align-items: center;
         justify-content: center;
         width: max(14px, 16rem);
@@ -2373,7 +2374,7 @@
     }
 
     .loading-percent {
-        font-size: var(--f-m);
+        font-size: var(--f-d);
         font-weight: 700;
         color: var(--c1);
     }
