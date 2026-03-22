@@ -611,6 +611,10 @@
         margin-bottom: 20rem;
     }
 
+    .section-header.s1-2 {
+        margin-bottom: 20px;
+    }
+
     .footer {
         background-color: var(--c3);
         color: var(--c2);
@@ -2387,10 +2391,17 @@
 
     .section-header .header-search {
         padding: 0;
-        width: 34px;
-        height: 34px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+        width: max(30px, 36rem);
+        height: max(30px, 36rem);
+        background-color: var(--c3);
+        color: var(--c2);
+        border-radius: var(--br2);
         min-width: unset;
-        margin-left: 10px;
+        margin-left: auto;
     }
 
     @keyframes dot-pulse {
@@ -2590,6 +2601,7 @@
         padding: 8rem 15rem;
     }
 
+    .section-header .header-search,
     .selector-submit,
     .textfield-submit {
         width: 30rem;
@@ -2930,8 +2942,8 @@
         width: 90rem;
     }
 
-    .section-header .header-search {
-        margin-left: auto;
+    .section-header.s1-2 {
+        grid-template-columns: 1fr;
     }
 }
 
