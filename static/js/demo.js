@@ -73,7 +73,8 @@ $("[data-popup]").click(function (e) {
 
 
 });
-$(".main-menu li:first-child a").click(function (e) {
+
+$(".main-menu li.current > span").click(function (e) {
     e.preventDefault();
     $(".main-menu").toggleClass("open");
     //return;
